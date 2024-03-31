@@ -1,0 +1,97 @@
+{
+  "profile_image": "img/pic.jpg",
+  "name": "Ajeet nath goswami",
+  "address": "Plot no 113,sector 1,vaisali, ghaziabad",
+  "emailid": "ajeet.2015.gos@gmail.com",
+  "mobile": "8527822269",
+  "professional_linkedin": "http://wwww.linkedin.com/in/ajeet",
+  "professional_youtube": "http://youtube.com/ajeet",
+  "professional_git": "http://github.com/fixbug11081",
+  "current_designation": "Associate",
+  "current_company": "HCL tech",
+  "current_company_url": "http://www.hcltech.com",
+  "one_line_profile_description": "I am AWS developer with node js. I ♥ the jalebi.",
+  "ctc": "24",
+  "etc": "32",
+  "highest": {
+    "degree": "Btech",
+    "college": "ucer",
+    "year": "2004"
+  },
+  "soft_skills": [
+    {
+      "skill": "API Arhitecture using Microservices and Serverless Architecture"
+    },
+    {
+      "skill": "Third Party API integeration in application"
+    },
+    {
+      "skill": "Migration of MYSQL data into NoSQL"
+    }
+  ],
+  "portfolio": [
+    {
+      "portfolio_img_link": "img/fci.png",
+      "protfolio_link": "https://www.fci.com",
+      "protfolio_label": "FCI HRMS",
+      "my_role": "this"
+    },
+    {
+      "portfolio_img_link": "img/hathway.png",
+      "protfolio_link": "https://www.hathway.com",
+      "protfolio_label": "Hathway",
+
+      "my_role": "this"
+    },
+    {
+      "portfolio_img_link": "img/bag.png",
+      "protfolio_link": "https://www.bagabuilder.co.uk",
+      "protfolio_label": "BagaBuilder",
+      "my_role": "this"
+    }
+  ],
+  "previous_job": [
+    {
+      "duration": "March2024 - till date",
+      "designation": "Associate",
+      "company": "HCLTECH"
+    },
+    {
+      "duration": "May 2022 - June 2023",
+      "designation": "Module Lead at ",
+      "company": "Happiest Mind Technology."
+    },
+    {
+      "duration": "August 2020 - March 2022",
+      "designation": "Lead Engineer",
+      "company": "Kellton Tech Solutions Pvt Ltd."
+    },
+    {
+      "duration": "Aug 2018 - July 2020",
+      "designation": "Senior Software Engineer",
+      "company": "Fly on IT Pvt Ltd."
+    }
+  ],
+  "skill": [
+    {
+      "skill_name": "React",
+      "rating": "4"
+    },
+    {
+      "skill_name": "Node Js",
+      "rating": "4"
+    },
+    {
+      "skill_name": "PHP",
+      "rating": "4"
+    }
+  ],
+  "hobbies": [
+    {
+      "hobby": "Playing Chess"
+    },
+    {
+      "hobby": "Playing carrom"
+    }
+  ]
+}
