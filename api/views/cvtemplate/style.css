@@ -1,0 +1,124 @@
+.decor {
+  background-image: url("img/sheddy.png");
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.gist {
+  font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 200;
+  background-color: cadetblue;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.title-desc {
+  float: left;
+  text-align: left;
+  padding: 10px;
+  font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 200;
+}
+
+.work-exp {
+  width: 100%;
+  align-items: left;
+  padding: 10px;
+  background-image: url("img/water.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.record > tr > td {
+  text-align: center;
+  border: 1px solid black;
+}
+.list > li {
+  background-color: cornflowerblue;
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 5px;
+  text-align: left;
+  text-decoration: none;
+}
+.contactme {
+  position: absolute;
+  background-color: cornflowerblue;
+  border: 2px solid black;
+  border-radius: 20px;
+  z-index: 4;
+  text-decoration: none;
+  padding: 20px;
+}
+a:hover {
+  background-color: darkcyan;
+}
+a:link {
+  text-decoration: none;
+}
+textarea {
+  width: 300px;
+  height: 100px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+input[type="text"] {
+  width: 200px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+input[type="email"] {
+  width: 200px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+.form-style {
+  width: 100%;
+  align-items: left;
+  text-align: left;
+  padding: 10px;
+  margin-left: 40px;
+  background-image: url("img/rainbow.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.design-bttn {
+  position: absolute;
+  background-color: cornflowerblue;
+  border: 2px solid black;
+  border-radius: 20px;
+  z-index: 4;
+  margin-left: 100px;
+  margin-top: -20px;
+  text-decoration: none;
+  padding: 10px;
+}
+.back-bttn {
+  position: absolute;
+  background-color: cornflowerblue;
+  border: 2px solid black;
+  border-radius: 10px;
+  z-index: 4;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 20px;
+}
+table > tr > td > label {
+  text-align: left;
+}
+.pos {
+  margin-top: 300px;
+  text-align: center;
+}
+.profile {
+  align-items: left;
+  text-align: left;
+  text-decoration: none;
+}

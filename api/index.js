@@ -4,20 +4,52 @@ import cors from "cors";
 import connectdb from "./connection.js";
 import CVModel from "./CVModel.js";
 import bodyParser from "body-parser";
+import util from "./util.js";
+import fs from "fs";
+import { v4 as uuid4 } from "uuid";
+import ejs from "ejs";
+import path from "path";
+import qs from "qs";
+import open from "open";
 
 var PORT = 5010;
 var app = express();
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
+app.use(express.static("public"));
+app.set("views", "./views/cvtemplate");
+app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
   console.log("Server started");
   res.send("Hello world");
 });
+
 app.post("/save", async (req, res) => {
   try {
     connectdb();
+    console.log(req.body);
+    let j = 1;
+
+    var pfo = [];
+    var comp = [];
+    for (let i = 0; i < 5; i++) {
+      if (eval("req.body.plink" + i) !== undefined) {
+        pfo[i] = {
+          protfolio_label: eval("req.body.project_name" + i),
+          protfolio_link: eval("req.body.plink" + i),
+          my_role: eval("req.body.prole" + i),
+        };
+      }
+      if (eval("req.body.comp_name" + i) !== undefined) {
+        comp[i] = {
+          company: eval("req.body.comp_name" + i),
+          designation: eval("req.body.designation" + i),
+          duration: eval("req.body.duration" + i),
+        };
+      }
+    }
 
     const CVdata = new CVModel({
       profile_image: req.body.person_img,
@@ -50,24 +82,21 @@ app.post("/save", async (req, res) => {
           skill: req.body.skill3,
         },
       ],
-      portfolio: [
-        {
-          protfolio_link: req.body.plink,
-          protfolio_label: req.body.project_name,
-          my_role: req.body.prole,
-        },
-      ],
-      previous_job: [
-        {
-          duration: req.body.duration,
-          designation: req.body.designation,
-          company: req.body.comp_name,
-        },
-      ],
+
+      portfolio: pfo,
+      previous_job: comp,
       skill: [
         {
-          skill_name: req.body.proficiency,
-          rating: req.body.rating,
+          skill_name: req.body.proficiency1,
+          rating: req.body.rating1,
+        },
+        {
+          skill_name: req.body.proficiency2,
+          rating: req.body.rating2,
+        },
+        {
+          skill_name: req.body.proficiency3,
+          rating: req.body.rating3,
         },
       ],
       hobbies: [
@@ -78,10 +107,24 @@ app.post("/save", async (req, res) => {
     });
 
     await CVdata.save();
-    res.send(CVdata);
+    res.json({ statusCode: 200, message: "Your record has been saved" });
   } catch (e) {
-    console.log("Error occured " + e);
+    res.json({ statusCode: 500, message: "Error occured " + e });
   }
+});
+
+app.get("/getcv", async (req, res) => {
+  try {
+    const email = req.query.email;
+    let cvdata = await CVModel.find({ emailid: email });
+    res.send({ statusCode: 200, data: cvdata[0] });
+  } catch (e) {
+    res.send({ statusCode: 500, data: e });
+  }
+});
+
+app.post("/upload", (req, res) => {
+  console.log(req.body);
 });
 //if (process.env.DEVELOPMENT) {
 app.listen(PORT, (req, res) => {

@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Personal = () => {
+const Personal = ({ handleChange }) => {
   return (
     <div>
       <div className="col-md-6">
         <label>Profile Image</label>
-        <input name="person_img" className="form-control" type="file" />
+
+        <input
+          name="person_img"
+          className="form-control"
+          type="file"
+          onChange={handleChange}
+        />
+
+        <img src="" />
       </div>
       <br />
       <div className="col-md-6">
@@ -15,6 +23,7 @@ const Personal = () => {
           type="text"
           name="name"
           placeholder="name"
+          onChange={handleChange}
         ></input>
       </div>
       <br />
@@ -25,6 +34,7 @@ const Personal = () => {
           type="text"
           placeholder="address"
           name="address"
+          onChange={handleChange}
         ></input>
       </div>
       <br />
@@ -35,6 +45,7 @@ const Personal = () => {
           type="text"
           placeholder="email"
           name="email"
+          onChange={handleChange}
         ></input>
       </div>
       <br />
@@ -45,6 +56,7 @@ const Personal = () => {
           type="text"
           placeholder="mobile"
           name="mobile"
+          onChange={handleChange}
         ></input>
       </div>
       <br />
@@ -55,6 +67,7 @@ const Personal = () => {
           type="text"
           name="curr_designation"
           placeholder="designation"
+          onChange={handleChange}
         ></input>
       </div>
       <br />
@@ -65,6 +78,7 @@ const Personal = () => {
           type="text"
           name="curr_comp"
           placeholder="name"
+          onChange={handleChange}
         ></input>
       </div>
       <br />
@@ -75,6 +89,7 @@ const Personal = () => {
           type="text"
           name="comp_url"
           placeholder="url"
+          onChange={handleChange}
         ></input>
       </div>
       <br />
@@ -85,6 +100,7 @@ const Personal = () => {
           type="text"
           name="description"
           placeholder="description"
+          onChange={handleChange}
         ></input>
       </div>
       <br />
@@ -95,6 +111,7 @@ const Personal = () => {
           type="text"
           placeholder="ctc"
           name="ctc"
+          onChange={handleChange}
         ></input>
       </div>
       <br />
@@ -105,6 +122,7 @@ const Personal = () => {
           type="text"
           placeholder="etc"
           name="etc"
+          onChange={handleChange}
         ></input>
       </div>
       <div className="col-md-6">
@@ -114,6 +132,7 @@ const Personal = () => {
           type="text"
           placeholder="url"
           name="lurl"
+          onChange={handleChange}
         ></input>
       </div>
       <br />
@@ -124,6 +143,7 @@ const Personal = () => {
           type="text"
           placeholder="url"
           name="gurl"
+          onChange={handleChange}
         ></input>
       </div>
       <br />
@@ -134,6 +154,7 @@ const Personal = () => {
           type="text"
           placeholder="url"
           name="yurl"
+          onChange={handleChange}
         ></input>
       </div>
       <div className="col-md-6">
@@ -143,6 +164,7 @@ const Personal = () => {
           type="text"
           placeholder="hobby"
           name="hobby"
+          onChange={handleChange}
         ></input>
       </div>
     </div>

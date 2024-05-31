@@ -1,21 +1,26 @@
 import React from "react";
 import { GrAdd } from "react-icons/gr";
-const ProjectGroup = () => {
+const ProjectGroup = ({ handleChange }) => {
+  let addProject = () => {
+    console.log("ajeet");
+  };
   return (
     <div>
       <div className="row">
         <div className="col-md-4">
-          <input type="text" name="project_name" />
+          <input type="text" name="project_name" onChange={handleChange} />
         </div>
 
         <div className="col-md-4">
-          <input type="text" name="plink" />
+          <input type="text" name="plink" onChange={handleChange} />
         </div>
         <div className="col-md-4">
-          <input type="text" name="pimg" />
+          <input type="text" name="pimg" onChange={handleChange} />
         </div>
         <div>
-          <GrAdd className="comp-add" />
+          <button className="comp-add" onClick={addProject}>
+            +
+          </button>
         </div>
       </div>
     </div>
