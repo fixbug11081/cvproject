@@ -16,7 +16,7 @@ var PORT = 5010;
 var app = express();
 app.use(cors());
 app.use(express.json());
-app.use(bodyParser.json());
+
 app.use(express.static("public"));
 app.set("views", "./views/cvtemplate");
 app.set("view engine", "ejs");
@@ -27,6 +27,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/save", async (req, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
   try {
     connectdb();
     console.log(req.body);
@@ -115,6 +116,7 @@ app.post("/save", async (req, res) => {
 
 app.get("/getcv", async (req, res) => {
   try {
+    res.set("Access-Control-Allow-Origin", "*");
     const email = req.query.email;
     let cvdata = await CVModel.find({ emailid: email });
     res.send({ statusCode: 200, data: cvdata[0] });
@@ -124,6 +126,7 @@ app.get("/getcv", async (req, res) => {
 });
 
 app.post("/upload", (req, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
   console.log(req.body);
 });
 //if (process.env.DEVELOPMENT) {
