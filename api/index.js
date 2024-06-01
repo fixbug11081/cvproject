@@ -129,8 +129,7 @@ app.post("/upload", (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
   console.log(req.body);
 });
-//if (process.env.DEVELOPMENT) {
-app.listen(PORT, (req, res) => {
+
+app.listen(process.env.PORT || 5010, (req, res) => {
   console.log("server run at port " + PORT);
 });
-//}
